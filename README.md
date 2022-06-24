@@ -1,1 +1,1 @@
-# random-meal-api
+## Random meal application
