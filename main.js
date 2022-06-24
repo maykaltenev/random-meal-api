@@ -9,13 +9,17 @@ const youtubeValue = document.getElementById('youtube');
 
 async function getData() {
     // specify where to get the data from
-    const response = await axios.get('https://www.themealdb.com/api/json/v1/1/random.php')
-    console.log('The response is', response.data.meals[0])
-    console.log(response.data.meals[0])
-    addTitle(response.data.meals[0].strMeal, response.data.meals[0].strArea, response.data.meals[0].strCategory, response.data.meals[0].strInstructions, response.data.meals[0].strCategory)
-    addImage(response.data.meals[0].strMealThumb)
-    addIngredients(response.data.meals[0])
-    addYoutube(response.data.meals[0].strYoutube)
+    const response = await axios.get('https://www.themealdb.com/api/json/v1/1/random.php');
+    // console.log('The response is', response.data.meals[0]);
+    // console.log(response.data.meals[0]);
+    addTitle(response.data.meals[0].strMeal,
+        response.data.meals[0].strArea,
+        response.data.meals[0].strCategory,
+        response.data.meals[0].strInstructions,
+        response.data.meals[0].strCategory);
+    addImage(response.data.meals[0].strMealThumb);
+    addIngredients(response.data.meals[0]);
+    addYoutube(response.data.meals[0].strYoutube);
 }
 function addTitle(title, area, category, instructions) {
     nameValue.innerHTML = title;
@@ -38,9 +42,9 @@ function addIngredients(ingredients) {
                 // if (key === (`strMeasure${i}`) && (ingredients[`strMeasure${i}`]) !== '' && (ingredients[`strMeasure${i}`]) !== null) {
 
             }
-        }
-    }
-    console.log(ingredientsArray)
+        };
+    };
+
     // all the measure
     ingredientsContainer.innerHTML += `<ul id='stats'> 
    ${(ingredientsArray).map(item => {
@@ -48,7 +52,8 @@ function addIngredients(ingredients) {
     }).join(' ')}
     </ul>`
 }
-
 function addYoutube(youtubeSrc) {
-    youtubeValue.src = `https://www.youtube.com/embed/${youtubeSrc.slice(-11)}`
+    youtubeValue.src = `https://www.youtube.com/embed/${youtubeSrc.slice(-11)}`;
 }
+
+getData();
