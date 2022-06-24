@@ -5,6 +5,7 @@ const categoryValue = document.getElementById('category');
 const areaValue = document.getElementById('area');
 const instructionValue = document.getElementById('instructions');
 const youtubeValue = document.getElementById('youtube');
+const button = document.getElementsByClassName('red')[0]
 
 
 async function getData() {
@@ -55,5 +56,36 @@ function addIngredients(ingredients) {
 function addYoutube(youtubeSrc) {
     youtubeValue.src = `https://www.youtube.com/embed/${youtubeSrc.slice(-11)}`;
 }
-
 getData();
+button.addEventListener('click',
+    () => {
+        ingredientsContainer.innerHTML = '';
+        instructionValue.innerHTML = '';
+        getData()
+
+
+    })
+img.addEventListener('click',
+    () => {
+        ingredientsContainer.innerHTML = '';
+        instructionValue.innerHTML = '';
+        getData()
+    })
+nameValue.addEventListener('click',
+    () => {
+        ingredientsContainer.innerHTML = '';
+        instructionValue.innerHTML = '';
+        getData()
+    })
+categoryValue.addEventListener('click',
+    () => {
+        ingredientsContainer.innerHTML = '';
+        instructionValue.innerHTML = '';
+        getData()
+    })
+areaValue.addEventListener('click',
+    () => {
+        ingredientsContainer.innerHTML = '';
+        instructionValue.innerHTML = '';
+        getData()
+    })
